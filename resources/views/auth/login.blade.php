@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
+    <title>SISTEMA INVENTARIO | Iniciar sesión</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -15,14 +15,41 @@
     <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-</head>
 
-<body class="hold-transition login-page">
+    {{-- Animate.css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+<style>
+    @font-face {
+        font-family: 'Andalia';
+        src: url('{{ asset('font/Andalia.ttf') }}');
+    }
+
+    .title1 {
+        font-family: 'BOOMSTER.otf';
+        font-size: 35pt;
+        color: black;
+        text-shadow: 0.1em 0.1em 0.5em wheat;
+    }
+
+    .img-fondo {
+        background: url('{{ asset('img/log_principal_pcymt_jucu.jpg') }}');
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        z-index: -3;
+        background-attachment: fixed;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<body class="hold-transition login-page img-fondo">
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ url('/') }}" class="h1"><b>SIS</b>Inventario</a>
+                <a href="{{ url('/') }}" class="h1"><b class="title1 animated heartBeat delay-1s">SISTEMA DE
+                        INVENTARIO</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Ingrese sus credenciales</p>
@@ -66,11 +93,16 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-12">
+                            <div class="row mb-0">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary btn-block mt-3">
                                         {{ __('Login') }}
                                     </button>
+                                </div>
+                            </div>
+                            <div class="row mb-0">
+                                <div class="col-md-12">
+                                    <a href="{{ url('/registro', []) }}">¿No tienes una cuenta, regístrate?</a>
                                 </div>
                             </div>
                         </form>

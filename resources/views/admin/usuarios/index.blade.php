@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <h1>Listado de Usuarios</h1>
+        <h3>Listado de usuarios</h3>
     </div>
     <div class="row">
         <div class="col-md-12 pt-2">
@@ -86,6 +86,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="row p-4">
+                    <div class="col-md-12">
+                        <a href="{{ url('/', []) }}" class="btn btn-secondary">Ir a principal</a>
+                    </div>
                 </div>
             </div>
         </div>

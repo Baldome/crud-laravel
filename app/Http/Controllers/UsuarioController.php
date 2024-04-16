@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
-//use Illuminate\Support\Facades\Validator\ValidateMaxlength;
 
 class UsuarioController extends Controller
 {
@@ -102,5 +101,9 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.index')
         ->with('message', 'Se eliminó al usuario de la manera correcta de la base de datos')
         ->with('icon', 'success');
+    }
+
+    public function registro() {
+        return view('auth.registro');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <h1>DATOS DEL USUARIO</h1>
+        <h1>Datos de la categoria</h1>
     </div>
     <div class="row">
         <div class="col-md-6 pt-2">
@@ -14,22 +14,22 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="name">Nombre del Usuario</label>
-                                <p>{{ $usuario->name }}</p>
+                                <label for="nombre">Nombre del categoria</label>
+                                <p>{{ $categoria->nombre }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <p>{{ $usuario->email }}</p>
+                                <label for="descripcion">Descripción</label>
+                                <p>{{ $categoria->descripcion }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="{{ url('/admin/usuarios', []) }}" class="btn btn-secondary">Volver</a>
+                            <a href="{{ url('/admin/categorias', []) }}" class="btn btn-secondary">Volver</a>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD Laravel 10</title>
+    <title>Sistema Inventario</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -24,6 +24,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {{-- Sweetalert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    {{-- Animate.css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -37,9 +40,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ url('/', []) }}" class="nav-link">CRUD con Laravel 10</a>
-                </li>
+                {{-- <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ url('/', []) }}" class="nav-link">Dashboard</a>
+                </li> --}}
             </ul>
 
             <!-- Right navbar links -->
@@ -88,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="{{ url('/', []) }}" class="brand-link">
                 <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sistema Inventario</span>
+                <span class="brand-text font-weight-light">SISTEMA INVENTARIO</span>
             </a>
 
             <!-- Sidebar -->
@@ -121,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('/admin/usuarios', []) }}" class="nav-link active">
+                                    <a href="{{ url('/admin/usuarios', []) }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Listado de Usuarios</p>
                                     </a>
@@ -129,7 +132,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
 
-                        <!-- Authentication Links -->
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/categorias', []) }}" class="nav-link">
+                                <i class="nav-icon fas"><i class="bi bi-card-checklist"></i></i>
+                                <p>
+                                    Categorias
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Autenticacion de Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -170,10 +182,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             @if (($message = Session::get('message')) && ($icon = Session::get('icon')))
                 <script>
                     Swal.fire({
-                        title: "Mensaje",
-                        text: "{{ $message }}",
-                        icon: "{{ $icon }}"
+                        position: "center",
+                        icon: "{{ $icon }}",
+                        title: "{{ $message }}",
+                        showConfirmButton: false,
+                        timer: 3000
                     });
+                    //     Swal.fire({
+                    //         title: "Mensaje",
+                    //         text: "{{ $message }}",
+                    //         icon: "{{ $icon }}"
+                    //     });
                 </script>
             @endif
 
@@ -188,21 +207,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
             <div class="p-3">
-                <h5>Title</h5>
+                <h5>Título</h5>
                 <p>Sidebar content</p>
             </div>
         </aside>
         <!-- /.control-sidebar -->
 
-        <!-- Main Footer -->
+        <!-- Pie de pagina main -->
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2024 <a href="#">MaxMig</a>.</strong> Todos los derechos reservados
         </footer>
     </div>
     <!-- ./wrapper -->

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <h1>Modificaciones de datos del usuario</h1>
+        <h1>MODIFICAR DATOS DEL USUARIO</h1>
     </div>
     <div class="row">
         <div class="col-md-6 pt-2">
