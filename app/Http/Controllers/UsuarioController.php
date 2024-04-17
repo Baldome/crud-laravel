@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
 
 class UsuarioController extends Controller
 {
@@ -32,13 +31,13 @@ class UsuarioController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|max:100',
-            'email' => 'required|unique:users',
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|email|string|unique:users,email',
             'password' => 'required|confirmed',
         ]);
 
         $usuario = new User();
-        $usuario->name = $request->name;
+        $usuario->nombre = $request->nombre;
         $usuario->email = $request->email;
         $usuario->password = $request->password;
 
@@ -74,13 +73,13 @@ class UsuarioController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|max:100',
-            'email' => 'required|unique:users',
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|email|string|unique:users,email',
             'password' => 'required|confirmed',
         ]);
 
         $usuario = User::find($id);
-        $usuario->name = $request->name;
+        $usuario->nombre = $request->nombre;
         $usuario->email = $request->email;
         $usuario->password = $request->password;
 

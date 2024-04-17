@@ -2,17 +2,17 @@
 
 @section('content')
     <div class="row">
-        <h3>Listado de categorias</h3>
+        <h3>Listado de ubicaciones</h3>
     </div>
     <hr>
     <div class="row">
         <div class="col-md-12 pt-2">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Listado de Categorias</h3>
+                    <h3 class="card-title">Listado de ubicaciones</h3>
                     <div class="card-tools">
-                        <a href="{{ url('/admin/categorias/create', []) }}" class="btn btn-primary"><i
-                                class="bi bi-plus pr-2"></i>Nueva categoria</a>
+                        <a href="{{ url('/admin/ubicaciones/create', []) }}" class="btn btn-primary"><i
+                                class="bi bi-plus pr-2"></i>Nueva ubicacion</a>
                     </div>
                 </div>
 
@@ -38,25 +38,25 @@
                             @php
                                 $contador = 0;
                             @endphp
-                            @foreach ($categorias as $categoria)
+                            @foreach ($ubicaciones as $ubicacion)
                                 @php
                                     $contador++;
-                                    $id = $categoria->id;
+                                    $id = $ubicacion->id;
                                 @endphp
                                 <tr>
                                     <td style="text-align: center">{{ $contador }}</td>
-                                    <td>{{ $categoria->nombre }}</td>
-                                    <td>{{ $categoria->descripcion }}</td>
+                                    <td>{{ $ubicacion->nombre }}</td>
+                                    <td>{{ $ubicacion->descripcion }}</td>
                                     <td style="text-align: center">
                                         <div class="btn-group top-50 start-50" role="group" aria-label="Basic example">
-                                            <a href="{{ route('categorias.show', [$categoria->id]) }}" type="button"
+                                            <a href="{{ route('ubicaciones.show', [$ubicacion->id]) }}" type="button"
                                                 class="btn btn-info"><i class="bi bi-eye pr-2"></i>Ver</a>
-                                            <a href="{{ route('categorias.edit', [$categoria->id]) }}" type="button"
+                                            <a href="{{ route('ubicaciones.edit', [$ubicacion->id]) }}" type="button"
                                                 class="btn btn-success"><i class="bi bi-pencil pr-2"></i>Editar</a>
-                                            <form action="{{ route('categorias.destroy', [$categoria->id]) }}"
+                                            <form action="{{ route('ubicaciones.destroy', [$ubicacion->id]) }}"
                                                 onclick="ask{{ $id }}(event)" method="post"
                                                 id="myform{{ $id }}">
-                                                @csrf {{-- Guarda los datos para y genera un token --}}
+                                                @csrf 
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger"
                                                     style="border-radius: 0px 5px 5px 0px"><i

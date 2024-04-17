@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'name' => 'admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('12345678'),
+            'nombre' => 'Maximo',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('11111111'),
         ]);
     }
 }

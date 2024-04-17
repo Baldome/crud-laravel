@@ -13,7 +13,7 @@ class CategoriaController extends Controller
     public function index()
     {
         $categorias = Categoria::all();
-        return view('admin/categorias.index', ['categorias' => $categorias]);
+        return view('admin.categorias.index', ['categorias' => $categorias]);
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|max:255',
+            'nombre' => 'required|string|max:255',
         ]);
 
         $categoria = new Categoria();

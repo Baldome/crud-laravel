@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activo;
 use Illuminate\Http\Request;
 
 class ActivoController extends Controller
@@ -11,7 +12,8 @@ class ActivoController extends Controller
      */
     public function index()
     {
-        //
+        $activos = Activo::all();
+        return view('admin.activos.index', ['activos' => $activos]);
     }
 
     /**
@@ -19,7 +21,7 @@ class ActivoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.activos.create');
     }
 
     /**
@@ -27,7 +29,33 @@ class ActivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'codigo'=> 'required|unique:activos,codigo|max:15',
+            'nombre'=> 'required|string|max:255',
+            'estado'=> 'required',
+            'fecha_registro'=> 'required',
+            'categoria_id'=> 'required',
+            'ubicacion_id'=> 'required',
+        ]);
+
+        $activo = new Activo();
+        $activo->codigo = $request->codigo;
+        $activo->nombre = $request->nombre;
+        $activo->descripcion = $request->descripcion;
+        $activo->estado = $request->estado;
+        $activo->fecha_registro = $request->fecha_registro;
+        $activo->modelo = $request->modelo;
+        $activo->serie = $request->serie;
+        $activo->imagen = $request->imagen;
+        $activo->observaciones = $request->observaciones;
+        $activo->categoria_id = $request->categoria_id;
+        $activo->ubicacion_id = $request->ubicacion_id;
+
+        $activo->save();
+
+        return redirect()->route('ubicaciones.index')
+        ->with('message','Se registró el activo de la manera correcta')
+        ->with('icon','success');
     }
 
     /**

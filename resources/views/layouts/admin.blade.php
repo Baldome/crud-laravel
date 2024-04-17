@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="es">
 
 <head>
@@ -103,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name }}</a> {{-- Traera el nombre del usuario autenticado --}}
+                        <a href="#" class="d-block">{{ Auth::user()->nombre }}</a> {{-- Traera el nombre del usuario autenticado --}}
                     </div>
                 </div>
 
@@ -132,11 +129,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
 
+                        {{-- Menú Activos --}}
                         <li class="nav-item">
-                            <a href="{{ url('/admin/categorias', []) }}" class="nav-link">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-coin"></i></i>
+                                <p>
+                                    Activos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/admin/activos', []) }}" class="nav-link">
+                                        <i class="bi bi-coin"></i></i>
+                                        <p>Listado de Activos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        {{-- Menu de Categorias --}}
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/categorias', []) }}" class="nav-link active">
                                 <i class="nav-icon fas"><i class="bi bi-card-checklist"></i></i>
                                 <p>
                                     Categorias
+                                </p>
+                            </a>
+                        </li>
+
+                        {{-- Menu de Ubicaciones --}}
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/ubicaciones', []) }}" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-geo-alt"></i></i>
+                                <p>
+                                    Ubicaciones
                                 </p>
                             </a>
                         </li>

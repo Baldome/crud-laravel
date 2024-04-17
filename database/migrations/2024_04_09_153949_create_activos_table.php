@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('activos', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo')->uniqid();
+            $table->string('codigo')->unique();
             $table->string('nombre');
             $table->text('descripcion')->nullable();
             $table->string('estado');

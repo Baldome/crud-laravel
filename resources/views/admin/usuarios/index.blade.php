@@ -43,7 +43,7 @@
                                 @endphp
                                 <tr>
                                     <td style="text-align: center">{{ $contador }}</td>
-                                    <td>{{ $usuario->name }}</td>
+                                    <td>{{ $usuario->nombre }}</td>
                                     <td>{{ $usuario->email }}</td>
                                     <td style="text-align: center">
                                         <div class="btn-group top-50 start-50" role="group" aria-label="Basic example">

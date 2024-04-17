@@ -34,7 +34,7 @@
     }
 
     .img-fondo {
-        background: url('{{ asset('img/log_principal_pcymt_jucu.jpg') }}');
+        background: url('{{ asset('img/log_principal_pcymt_jucu1.jpg') }}');
         background-repeat: no-repeat;
         background-size: 100vw 100vh;
         z-index: -3;
@@ -108,8 +108,6 @@
                         </form>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.card-body -->
         </div>
