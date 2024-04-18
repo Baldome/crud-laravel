@@ -18,7 +18,7 @@ class CategoriaController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     */
+     */                              
     public function create()
     {
         return view('admin.categorias.create');
@@ -40,7 +40,7 @@ class CategoriaController extends Controller
         $categoria->save();
 
         return redirect()->route('categorias.index')
-            ->with('message', 'Se registró la categoria de la manera correcta en la base de datos')
+            ->with('message', 'Se registró la categoria de la manera correcta')
             ->with('icon', 'success');
     }
 
@@ -78,7 +78,7 @@ class CategoriaController extends Controller
         $categoria->save();
 
         return redirect()->route('categorias.index')
-            ->with('message', 'Se actualizó la categoria de la manera correcta en la base de datos')
+            ->with('message', 'Se actualizó la categoria de la manera correcta')
             ->with('icon', 'success');
     }
 
@@ -90,7 +90,7 @@ class CategoriaController extends Controller
         Categoria::destroy($id);
 
         return redirect()->route('categorias.index')
-        ->with('message', 'Se eliminó la categoría de la manera correcta de la base de datos')
+        ->with('message', 'Se eliminó la categoría de la manera correcta')
         ->with('icon', 'success');
     }
 }

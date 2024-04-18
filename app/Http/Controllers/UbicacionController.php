@@ -41,7 +41,7 @@ class UbicacionController extends Controller
 
         return redirect()->route('ubicaciones.index')
         ->with('message', 'Se registró la ubicación de la manera correcta en la base de datos')
-        ->with('icon', 'succes');
+        ->with('icon', 'success');
     }
 
     /**

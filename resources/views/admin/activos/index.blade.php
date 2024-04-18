@@ -69,8 +69,17 @@
                                 @endphp
                                 <tr>
                                     <td style="text-align: center">{{ $contador }}</td>
+                                    <td>{{ $activo->codigo }}</td>
                                     <td>{{ $activo->nombre }}</td>
                                     <td>{{ $activo->descripcion }}</td>
+                                    <td>{{ $activo->estado }}</td>
+                                    <td>{{ $activo->fecha_ingreso }}</td>
+                                    <td>{{ $activo->modelo }}</td>
+                                    <td>{{ $activo->serie }}</td>
+                                    <td>{{ $activo->imagen }}</td>
+                                    <td>{{ $activo->observaciones }}</td>
+                                    <td>{{ $activo->categoria->nombre }}</td>
+                                    <td>{{ $activo->ubicacion->nombre }}</td>
                                     <td style="text-align: center">
                                         <div class="btn-group top-50 start-50" role="group" aria-label="Basic example">
                                             <a href="{{ route('activos.show', [$activo->id]) }}" type="button"

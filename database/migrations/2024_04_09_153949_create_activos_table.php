@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->text('descripcion')->nullable();
             $table->string('estado');
-            $table->date('fecha_registro');
+            $table->date('fecha_ingreso');
             $table->string('modelo')->nullable();
             $table->string('serie')->nullable();
             $table->string('imagen')->nullable();

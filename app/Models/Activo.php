@@ -16,6 +16,6 @@ class Activo extends Model
     }
 
     public function ubicacion(){
-        return $this->belongsTo(Ubicacion::class); // de muchos a uno
+        return $this->belongsTo(Ubicacione::class); // de muchos a uno
     }
 }
